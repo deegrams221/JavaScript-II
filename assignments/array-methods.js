@@ -57,7 +57,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
 runners.forEach(function (runner) {
-    let name = runner.first_name + " " + runner.last_name;
+    let name = `${runner.first_name} ${runner.last_name}`;
     fullName.push(name)
 })
 console.log(fullName);
@@ -83,9 +83,9 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-ticketPriceTotal = runners.reduce((donation, runner, index, runners) => {
+ticketPriceTotal = runners.reduce((donation, runner) => {
     return donation += runner.donation;
-  },0); 
+  }, 0); 
   
   console.log(ticketPriceTotal); 
 
@@ -95,7 +95,7 @@ ticketPriceTotal = runners.reduce((donation, runner, index, runners) => {
 // Problem 1 : list the company name and last name of each runner
 let companyList = [];
 runners.forEach(function (runner) {
-    let list = "Compnay: " + runner.company_name + ", " + "Last name: " + runner.last_name;
+    let list = `Compnay: ${runner.company_name}, Last name: ${runner.last_name}`;
     companyList.push(list);
 })
 console.log(companyList);
@@ -113,7 +113,7 @@ console.log(smallShirt);
 // Problem 3: List the id, last name, and email for each runner
 let idList = [];
 runners.forEach(function (runner) {
-    let idenification = runner.id + " " + runner.last_name + " " + runner.email;
+    let idenification = `${runner.id} ${runner.last_name} ${runner.email}`;
     idList.push(idenification);
 })
 console.log(idList);
